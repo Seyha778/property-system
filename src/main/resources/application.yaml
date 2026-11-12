@@ -1,0 +1,36 @@
+server:
+  port: ${SERVER_PORT:9091}
+
+spring:
+  application:
+    name: senghang
+  datasource:
+    url: jdbc:postgresql://localhost:5432/digital
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 1
+      minimum-idle: 1
+      connection-timeout: 30000
+
+  # JPA / Hibernate
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+app:
+  security:
+    jwt:
+      secret: "Y7vN2kL9pQ4xR8mW6aB3cD1eF5gH0jK2sT9uV4wX6zA="
+
+cloudinary:
+  cloud-name: your-cloud-name
+  api-key: your-api-key
+  api-secret: your-api-secret
